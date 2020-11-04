@@ -1,10 +1,10 @@
-import logo from './kidsloop_min_logo.svg';
-import './App.css';
+import './styles/app.css';
+import { SignIn } from './SignIn';
 
 function App() {
   return (
-    <div className="App">
-      Hello
+    <div className="container font-sans">
+      <SignIn />
     </div>
   );
 }

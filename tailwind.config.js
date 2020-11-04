@@ -8,7 +8,6 @@ module.exports = {
       enabled: true,
       content: ["./src/**/*.html"]
     }
-
   ],
   target: 'relaxed',
   prefix: '',
@@ -28,7 +27,28 @@ module.exports = {
 
       black: '#000',
       white: '#fff',
-
+      'kl-blue': {
+        100: '#43A1F3',
+        200: '#3097F2',
+        300: '#1D8EF1',
+        400: '#0F84EB',
+        500: '#0e78d5',
+        600: '#0D71C8',
+        700: '#0C68B9',
+        800: '#0B5FAA',
+        900: '#0A579A'
+      },
+      'navy-blue': {
+        100: '#155FDF',
+        200: '#1255C7',
+        300: '#104AAF',
+        400: '#0E4096',
+        500: '#0c3680',
+        600: '#0B3275',
+        700: '#0A2E6C',
+        800: '#092A63',
+        900: '#08265A'
+      },
       gray: {
         100: '#f7fafc',
         200: '#edf2f7',
@@ -224,6 +244,7 @@ module.exports = {
       '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
       inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
       outline: '0 0 0 3px rgba(66, 153, 225, 0.5)',
+      loginCard: '0 0 20px 5px rgba(0, 0, 0, 0.1)',
       none: 'none',
     },
     container: {},
@@ -258,11 +279,11 @@ module.exports = {
     },
     fontFamily: {
       sans: [
+        'Roboto',
         'system-ui',
         '-apple-system',
         'BlinkMacSystemFont',
         '"Segoe UI"',
-        'Roboto',
         '"Helvetica Neue"',
         'Arial',
         '"Noto Sans"',

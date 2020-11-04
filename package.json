@@ -12,14 +12,13 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "build:tailwind": "tailwind build src/tailwind.css -o src/tailwind.output.css",
-    "watch:tailwind": "chokidar 'src/**/*.css' 'src/**/*.scss' --ignore src/tailwind.output.css -c 'npm run build:tailwind'",
-    "start": "npm-run-all build:tailwind --parallel watch:tailwind start:react",
+    "start": "npm run watch:css & npm run start:react",
+    "build": "npm run build:css && react-scripts build",
     "start:react": "react-scripts start",
-    "prebuild": "run-s build:tailwind",
-    "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build:css": "postcss src/styles/tailwind.css -o src/styles/app.css",
+    "watch:css": "postcss src/styles/tailwind.css -o src/styles/app.css -w"
   },
   "eslintConfig": {
     "extends": [
@@ -40,11 +39,7 @@
     ]
   },
   "devDependencies": {
-    "autoprefixer": "^10.0.1",
-    "chokidar-cli": "^2.1.0",
-    "express": "^4.17.1",
-    "nodemon": "^2.0.6",
-    "npm-run-all": "^4.1.5",
+    "autoprefixer": "^9.0.0",
     "postcss-cli": "^8.2.0",
     "tailwindcss": "^1.9.6"
   }
