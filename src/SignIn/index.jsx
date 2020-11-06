@@ -123,10 +123,10 @@ export const SignIn = () => {
                             </div>
                             <div className="flex flex-col space-y-3">
 
-                                <input value={formData.email.value} name="email" className={`w-full block placeholder-gray-500 rounded-xl py-3 px-4 border outline-none focus:shadow-outline focus:border-transparent ${!formData.email.valid ? 'border-red-500' : 'border-gray-500'}`} type="text" placeholder="Email or Phone *" disabled={submittingForm} onChange={handleInputChange} />
+                                <input value={formData.email.value} name="email" autoComplete="email" className={`w-full block placeholder-gray-500 rounded-xl py-3 px-4 border outline-none focus:shadow-outline focus:border-transparent ${!formData.email.valid ? 'border-red-500' : 'border-gray-500'}`} type="text" placeholder="Email or Phone *" disabled={submittingForm} onChange={handleInputChange} />
                                 <p className={`text-red-500 text-xs italic ${formData.email.valid ? 'hidden' : ''}`}>Please provide correct email</p>
 
-                                <input value={formData.password.value} name="password" className={`w-full block placeholder-gray-500 rounded-xl py-3 px-4 border border-gray-500 outline-none focus:shadow-outline focus:border-transparent ${!formData.password.valid ? 'border-red-500' : 'border-gray-500'} `} type="password" placeholder="Password *" disabled={submittingForm} onChange={handleInputChange} />
+                                <input value={formData.password.value} name="password" autoComplete="current-password" className={`w-full block placeholder-gray-500 rounded-xl py-3 px-4 border border-gray-500 outline-none focus:shadow-outline focus:border-transparent ${!formData.password.valid ? 'border-red-500' : 'border-gray-500'} `} type="password" placeholder="Password *" disabled={submittingForm} onChange={handleInputChange} />
                                 <p className={`text-red-500 text-xs italic ${formData.password.valid ? 'hidden' : ''}`}>Please provide correct password</p>
                             </div>
                             <div className="flex justify-between items-center mt-4 w-auto">
