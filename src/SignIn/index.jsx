@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import { ReactComponent as Logo } from '../logo_min.svg'
 import { produce } from 'immer';
 
@@ -123,15 +122,17 @@ export const SignIn = () => {
                             </div>
                             <div className="flex flex-col space-y-3">
 
-                                <input value={formData.email.value} name="email" autoComplete="email" className={`w-full block placeholder-gray-500 rounded-xl py-3 px-4 border outline-none focus:shadow-outline focus:border-transparent ${!formData.email.valid ? 'border-red-500' : 'border-gray-500'}`} type="text" placeholder="Email or Phone *" disabled={submittingForm} onChange={handleInputChange} />
+                                <input value={formData.email.value} name="email" aria-label="email" aria-required="true" tabIndex="1" autoComplete="email" className={`w-full block placeholder-gray-500 rounded-xl py-3 px-4 border outline-none focus:shadow-outline focus:border-transparent ${!formData.email.valid ? 'border-red-500' : 'border-gray-500'}`} type="text" placeholder="Email or Phone *" disabled={submittingForm} onChange={handleInputChange} />
                                 <p className={`text-red-500 text-xs italic ${formData.email.valid ? 'hidden' : ''}`}>Please provide correct email</p>
 
-                                <input value={formData.password.value} name="password" autoComplete="current-password" className={`w-full block placeholder-gray-500 rounded-xl py-3 px-4 border border-gray-500 outline-none focus:shadow-outline focus:border-transparent ${!formData.password.valid ? 'border-red-500' : 'border-gray-500'} `} type="password" placeholder="Password *" disabled={submittingForm} onChange={handleInputChange} />
+                                <input value={formData.password.value} aria-label="password" name="password" aria-required="true" tabIndex="2" autoComplete="current-password" className={`w-full block placeholder-gray-500 rounded-xl py-3 px-4 border border-gray-500 outline-none focus:shadow-outline focus:border-transparent ${!formData.password.valid ? 'border-red-500' : 'border-gray-500'} `} type="password" placeholder="Password *" disabled={submittingForm} onChange={handleInputChange} />
                                 <p className={`text-red-500 text-xs italic ${formData.password.valid ? 'hidden' : ''}`}>Please provide correct password</p>
                             </div>
                             <div className="flex justify-between items-center mt-4 w-auto">
                                 <a href="#" className={`text-sm font-normal cursor ${!darkMode ? 'text-navy-blue-500' : 'text-kl-blue-500'}`}>Forgot Password?</a>
-                                <button type="submit" className={`ml-10 md:ml-40 bg-kl-blue-500 hover:bg-kl-blue-300 focus:outline-none focus:border-kl-blue-700 focus:shadow-outline text-sm text-white text-center font-normal inline-block items-center px-8 py-1 border border-transparent rounded-xl cursor ${submittingForm ? 'cursor-not-allowed' : ''} `} disabled={submittingForm} >
+                                <button type="submit" tabIndex="3"
+                                    className={`ml-10 md:ml-40 bg-kl-blue-500 hover:bg-kl-blue-300 focus:outline-none focus:border-kl-blue-700 focus:shadow-outline text-sm text-white text-center font-normal inline-block items-center px-8 py-1 border border-transparent rounded-xl cursor ${submittingForm ? 'cursor-not-allowed' : ''} `}
+                                    aria-disabled={submittingForm} disabled={submittingForm} >
                                     {
                                         submittingForm ?
                                             <svg className=" inline-block animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -159,7 +160,8 @@ export const SignIn = () => {
                             </button>
 
                             <div className="relative">
-                                <button type="button" className="relative z-10 border-b focus:border-b focus:outline-none border-black inline-block ml-4 cursor-pointer " onClick={toggleDropDown}>
+                                <button type="button"
+                                    className="relative z-10 border-b focus:border-b focus:outline-none border-black inline-block ml-4 cursor-pointer " onClick={toggleDropDown}>
                                     <a className="inline-block"> Select Language</a>
                                 </button>
 
@@ -172,7 +174,7 @@ export const SignIn = () => {
                                         <>
                                             <button type="button" className="fixed inset-0 h-full w-full bg-black opacity-25" tabIndex="-1" onClick={() => toggleDropDown()} />
 
-                                            <div className="mt-2 rounded-xl flow-root py-2 shadow-loginCard w-32 absolute right-0">
+                                            <div className={`mt-2 bg-current rounded-xl flow-root py-2 shadow-loginCard w-32 absolute right-0 ${darkMode ? 'bg-gray-700' : 'bg-white'}`}>
                                                 <a href="#" className="block px-4 py-2 hover:bg-kl-blue-300 hover:text-white">Amharic</a>
                                                 <a href="#" className="block px-4 py-2 hover:bg-kl-blue-300 hover:text-white">English</a>
                                                 <a href="#" className="block px-4 py-2 hover:bg-kl-blue-300 hover:text-white">French</a>
