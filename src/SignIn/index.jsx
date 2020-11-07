@@ -1,6 +1,6 @@
 import React, { useState, useEffect, Fragment } from "react";
 import { produce } from "immer";
-import Logo from "../logo_min.svg";
+import Logo from "../Logo.jsx";
 
 export const SignIn = () => {
   const [dropDownOpen, setDropDownOpen] = useState(false);
@@ -114,8 +114,7 @@ export const SignIn = () => {
             <div className="shadow-loginCard p-5 pb-12 rounded-xl border-2  h-auto">
               <Fragment>
                 <div className="flex-1  mb-8">
-                  {/* <Logo className="h-10" alt="kids loop logo" /> */}
-                  <img src={Logo} alt="kids loop logo" />
+                  <Logo className="h-10" />
                 </div>
                 <div className="flex-1 mb-8">
                   <p
