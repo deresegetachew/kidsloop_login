@@ -118,7 +118,7 @@ export const SignIn = () => {
                 </div>
                 <div className="flex-1 mb-8">
                   <p
-                    className={`text - 2xl font-normal ${
+                    className={`text-2xl font-normal ${
                       darkMode ? "text-white" : "text-current"
                     }`}
                   >
